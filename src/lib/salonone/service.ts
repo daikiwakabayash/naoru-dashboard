@@ -8,6 +8,8 @@ import {
   MOCK_STORES,
   MOCK_SUBSCRIPTION,
 } from "./mock";
+import { MOCK_MANAGEMENT_SHEET } from "./management-mock";
+import type { ManagementSheet } from "./management-types";
 import type {
   DashboardFilters,
   ManagementDashboard,
@@ -69,4 +71,15 @@ export async function getSubscriptionDashboard(
   return salonOneGet<SubscriptionDashboard>(ENDPOINTS.subscription, {
     query: toQuery(filters),
   });
+}
+
+/**
+ * 総合ダッシュボード（重要指標・WEB費用対効果・入退会・イベント）。
+ * 現状はモック。実API接続時は各セクションをここで正規化する。
+ */
+export async function getManagementSheet(): Promise<ManagementSheet> {
+  const { useMock } = getSalonOneConfig();
+  if (useMock) return MOCK_MANAGEMENT_SHEET;
+  // TODO: 実レスポンス → ManagementSheet へのマッピングを実装
+  return MOCK_MANAGEMENT_SHEET;
 }

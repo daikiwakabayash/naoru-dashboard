@@ -5,13 +5,14 @@ import { usePathname } from "next/navigation";
 import clsx from "clsx";
 
 const NAV_ITEMS = [
-  { href: "/dashboard", label: "経営指標", icon: "🏠" },
-  { href: "/dashboard/overview", label: "ダッシュボード", icon: "📊" },
-  { href: "/dashboard/marketing", label: "マーケティング", icon: "📣" },
+  { href: "/dashboard", label: "総合ダッシュボード", icon: "🩺" },
+  { href: "/dashboard/kpi", label: "重要指標", icon: "📌" },
+  { href: "/dashboard/management", label: "経営指標", icon: "📈" },
+  { href: "/dashboard/stores", label: "店舗別分析", icon: "🏥" },
+  { href: "/dashboard/marketing", label: "WEB費用対効果", icon: "📣" },
+  { href: "/dashboard/membership", label: "新規入会・退会率", icon: "🎯" },
+  { href: "/dashboard/events", label: "勉強会・イベント", icon: "📚" },
   { href: "/subscription", label: "サブスク分析", icon: "🔁" },
-  { href: "/dashboard/plan", label: "事業計画", icon: "🎯" },
-  { href: "/dashboard/customers", label: "顧客管理", icon: "👥" },
-  { href: "/dashboard/finance", label: "経理・財務", icon: "🧾" },
 ];
 
 export function Sidebar() {

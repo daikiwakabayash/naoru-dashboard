@@ -25,6 +25,23 @@ export function formatManYenDecimal(value: number, fractionDigits = 1): string {
   })}万`;
 }
 
+/** 183,354,435 → "¥1.83億" のように「億」単位で表示 */
+export function formatOkuYen(value: number, fractionDigits = 2): string {
+  const oku = value / 100_000_000;
+  return `¥${oku.toLocaleString("ja-JP", {
+    minimumFractionDigits: fractionDigits,
+    maximumFractionDigits: fractionDigits,
+  })}億`;
+}
+
+/** 比率(1.09)を "109%" と表示（前月対比・前年対比など） */
+export function formatRatio(value: number, fractionDigits = 0): string {
+  return `${(value * 100).toLocaleString("ja-JP", {
+    minimumFractionDigits: fractionDigits,
+    maximumFractionDigits: fractionDigits,
+  })}%`;
+}
+
 /** 0.0783 → "7.83%" */
 export function formatPercent(value: number, fractionDigits = 0): string {
   return `${(value * 100).toLocaleString("ja-JP", {

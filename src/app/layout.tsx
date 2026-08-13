@@ -3,8 +3,8 @@ import "./globals.css";
 import { Sidebar } from "@/components/layout/Sidebar";
 
 export const metadata: Metadata = {
-  title: "NAORU ダッシュボード",
-  description: "SALON ONE 連携 経営ダッシュボード",
+  title: "NAORU 総合ダッシュボード",
+  description: "整体院グループ 経営ダッシュボード（SALON ONE 連携）",
 };
 
 export default function RootLayout({
